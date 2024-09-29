@@ -4,6 +4,9 @@ export { shuffled };
 import { userIsTyping } from './userIsTyping';
 export { userIsTyping };
 
+import { isBeingInteractedWith } from './isBeingInteractedWith';
+export { isBeingInteractedWith };
+
 import { detectMac } from './detectMac';
 export { detectMac };
 
