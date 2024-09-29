@@ -7,6 +7,9 @@ export { userIsTyping };
 import { isBeingInteractedWith } from './isBeingInteractedWith';
 export { isBeingInteractedWith };
 
+import { KeyBinding } from './KeyBinding';
+export { KeyBinding };
+
 import { detectMac } from './detectMac';
 export { detectMac };
 
