@@ -9,24 +9,6 @@ describe('`isBeingInteractedWith()` function', () => {
     expect(isBeingInteractedWith(document.body)).toBe(true);
   });
 
-  describe('when the active element of the document is defined', () => {
-    it('returns true if and only if the provided element contains the active element of the document', () => {
-      Object.defineProperty(document, 'activeElement', { value: document.createElement('div'), writable: true });
-
-      let ele = document.createElement('div');
-      ele.append(document.activeElement);
-
-      expect(isBeingInteractedWith(ele)).toBe(true);
-      expect(isBeingInteractedWith(document.activeElement)).toBe(true);
-
-      // the provided element must contain the active element (not the other way around)
-      document.activeElement.remove();
-      document.activeElement.append(ele);
-
-      expect(isBeingInteractedWith(ele)).toBe(false);
-    });
-  });
-
   it('returns true if the provided element contains the last element to be moused down on', () => {
     let ele1 = document.createElement('div');
     document.body.append(ele1);

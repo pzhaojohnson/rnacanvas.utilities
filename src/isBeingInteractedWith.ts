@@ -12,10 +12,6 @@ window.addEventListener('mousedown', event => prevMouseDown = event);
 export function isBeingInteractedWith(ele: Element): boolean {
   if (ele === document.body) { return true; }
 
-  if (document.activeElement) {
-    return ele.contains(document.activeElement);
-  }
-
   return (
     !!prevMouseDown
     && prevMouseDown.target instanceof Node
