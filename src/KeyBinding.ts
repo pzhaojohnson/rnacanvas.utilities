@@ -13,8 +13,11 @@ export class KeyBinding {
         && isBeingInteractedWith(this.scope)
       );
 
-      allConditionsAreMet ? callbackFn() : {};
-    });
+      if (allConditionsAreMet) {
+        event.preventDefault();
+        callbackFn();
+      }
+    }, { passive: false });
   }
 
   /**
