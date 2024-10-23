@@ -18,3 +18,6 @@ export { DownloadableFile };
 
 import { EventfulSet } from './EventfulSet';
 export { EventfulSet };
+
+import { FiniteStack } from './FiniteStack';
+export { FiniteStack };
