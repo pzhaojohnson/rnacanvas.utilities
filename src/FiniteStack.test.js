@@ -32,6 +32,24 @@ describe('`class FiniteStack`', () => {
     expect(stack.isEmpty()).toBe(true);
   });
 
+  test('`peek()`', () => {
+    let stack = new FiniteStack(12);
+    expect(() => stack.peek()).toThrow();
+
+    [...'auhciydf'].forEach(c => stack.push(c));
+    expect(stack.peek()).toBe('f');
+
+    stack.pop();
+    expect(stack.peek()).toBe('d');
+
+    [1, 2].forEach(() => stack.pop());
+    expect(stack.peek()).toBe('i');
+
+    // exceed the maximum stack size
+    [...'AGUCGAUCGAUIGAIUSDGF'].forEach(c => stack.push(c));
+    expect(stack.peek()).toBe('F');
+  });
+
   test('`push()`', () => {
     let stack = new FiniteStack(10);
 

@@ -22,6 +22,19 @@ export class FiniteStack<T> {
   }
 
   /**
+   * Returns the item at the top of the stack.
+   *
+   * Throws if the stack is empty.
+   */
+  peek(): T | never {
+    if (this.size == 0) {
+      throw new Error('The stack is empty.');
+    }
+
+    return this.#stack[this.#stack.length - 1];
+  }
+
+  /**
    * Pushes the item to the top of the stack.
    *
    * Removes the item at the bottom of the stack
