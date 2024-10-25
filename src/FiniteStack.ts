@@ -4,6 +4,10 @@
 export class FiniteStack<T> {
   #stack: T[] = [];
 
+  #eventListeners: EventListeners = {
+    'change': [],
+  };
+
   constructor(readonly maxSize: number) {}
 
   /**
@@ -29,6 +33,8 @@ export class FiniteStack<T> {
     if (this.size > this.maxSize) {
       this.#stack.shift();
     }
+
+    this.#callEventListeners('change');
   }
 
   /**
@@ -41,6 +47,32 @@ export class FiniteStack<T> {
       throw new Error('The stack is empty.');
     }
 
-    return this.#stack.pop() as T;
+    let poppedItem = this.#stack.pop() as T;
+
+    this.#callEventListeners('change');
+
+    return poppedItem;
+  }
+
+  addEventListener(name: EventName, listener: EventListener): void {
+    this.#eventListeners[name].push(listener);
+  }
+
+  removeEventListener(name: EventName, listener: EventListener): void {
+    this.#eventListeners[name] = this.#eventListeners[name].filter(li => li !== listener);
+  }
+
+  #callEventListeners(name: EventName): void {
+    this.#eventListeners[name].forEach(listener => listener());
   }
 }
+
+type EventName = (
+  'change'
+);
+
+type EventListener = () => void;
+
+type EventListeners = {
+  'change': EventListener[],
+};
