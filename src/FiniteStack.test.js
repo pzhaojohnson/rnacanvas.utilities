@@ -16,7 +16,7 @@ describe('`class FiniteStack`', () => {
   });
 
   test('`isEmpty()`', () => {
-    let stack = new FiniteStack();
+    let stack = new FiniteStack(6);
     expect(stack.isEmpty()).toBe(true);
 
     [1, 2, 3].forEach(n => stack.push(n));
@@ -99,7 +99,7 @@ describe('`class FiniteStack`', () => {
   });
 
   test('`addEventListener()`', () => {
-    let stack = new FiniteStack();
+    let stack = new FiniteStack(5);
 
     let listeners = [jest.fn(), jest.fn(), jest.fn()];
     listeners.forEach(li => stack.addEventListener('change', li));
@@ -115,7 +115,7 @@ describe('`class FiniteStack`', () => {
   });
 
   test('`removeEventListener()`', () => {
-    let stack = new FiniteStack();
+    let stack = new FiniteStack(5);
 
     let listeners = [jest.fn(), jest.fn(), jest.fn()];
     listeners.forEach(li => stack.addEventListener('change', li));
