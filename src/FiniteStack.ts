@@ -13,6 +13,10 @@ export class FiniteStack<T> {
     return this.#stack.length;
   }
 
+  isEmpty(): boolean {
+    return this.size == 0;
+  }
+
   /**
    * Pushes the item to the top of the stack.
    *

@@ -15,6 +15,23 @@ describe('`class FiniteStack`', () => {
     expect(stack.size).toBe(6);
   });
 
+  test('`isEmpty()`', () => {
+    let stack = new FiniteStack();
+    expect(stack.isEmpty()).toBe(true);
+
+    [1, 2, 3].forEach(n => stack.push(n));
+    expect(stack.isEmpty()).toBe(false);
+
+    stack.pop();
+    expect(stack.isEmpty()).toBe(false);
+
+    stack.pop();
+    expect(stack.isEmpty()).toBe(false);
+
+    stack.pop();
+    expect(stack.isEmpty()).toBe(true);
+  });
+
   test('`push()`', () => {
     let stack = new FiniteStack(10);
 
