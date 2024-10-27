@@ -32,6 +32,32 @@ describe('`class FiniteStack`', () => {
     expect(stack.isEmpty()).toBe(true);
   });
 
+  test('`empty()`', () => {
+    let stack = new FiniteStack(20);
+
+    let listeners = [1, 2, 3].map(() => jest.fn());
+    listeners.forEach(li => stack.addEventListener('change', li));
+
+    expect(stack.isEmpty()).toBeTruthy();
+
+    stack.empty();
+
+    // the stack was already empty
+    listeners.forEach(li => expect(li).not.toHaveBeenCalled());
+
+    [1, 2, 3, 4, 5].forEach(n => stack.push(n));
+    expect(stack.size).toBe(5);
+
+    listeners = [1, 2, 3].map(() => jest.fn(() => expect(stack.size).toBe(0)));
+    listeners.forEach(li => stack.addEventListener('change', li));
+
+    stack.empty();
+    expect(stack.size).toBe(0);
+
+    // calls change event listeners after emptying the stack
+    listeners.forEach(li => expect(li).toHaveBeenCalledTimes(1));
+  });
+
   test('`peek()`', () => {
     let stack = new FiniteStack(12);
     expect(() => stack.peek()).toThrow();

@@ -22,6 +22,19 @@ export class FiniteStack<T> {
   }
 
   /**
+   * Empties the stack.
+   */
+  empty(): void {
+    if (this.size == 0) {
+      return; // the stack is already empty
+    }
+
+    this.#stack = [];
+
+    this.#callEventListeners('change');
+  }
+
+  /**
    * Returns the item at the top of the stack.
    *
    * Throws if the stack is empty.
