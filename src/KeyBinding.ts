@@ -3,7 +3,14 @@ import { userIsTyping } from './userIsTyping';
 import { isBeingInteractedWith } from './isBeingInteractedWith';
 
 export class KeyBinding {
-  #scope: Element | undefined = undefined;
+  /**
+   * Must be currently being interacted with by the user
+   * for the key binding to be triggered
+   * (and must be set to an element for the key binding to become active).
+   *
+   * Set to the document body for the key binding to apply to the whole webpage.
+   */
+  public scope: Element | undefined = undefined;
 
   #options;
 
@@ -17,6 +24,7 @@ export class KeyBinding {
         && (this.#options?.ctrlKey === undefined || this.#options.ctrlKey == event.ctrlKey)
         && (this.#options?.metaKey === undefined || this.#options.metaKey == event.metaKey)
         && !userIsTyping()
+        && this.scope
         && isBeingInteractedWith(this.scope)
       );
 
@@ -25,20 +33,6 @@ export class KeyBinding {
         callbackFn();
       }
     }, { passive: false });
-  }
-
-  /**
-   * Must be currently being interacted with by the user
-   * for the key binding to be triggered.
-   *
-   * Is the document body by default (i.e., key bindings apply to the whole webpage by default).
-   */
-  get scope(): Element {
-    return this.#scope ?? document.body;
-  }
-
-  set scope(scope) {
-    this.#scope = scope;
   }
 }
 
