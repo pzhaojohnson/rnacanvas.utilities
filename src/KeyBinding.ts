@@ -5,10 +5,17 @@ import { isBeingInteractedWith } from './isBeingInteractedWith';
 export class KeyBinding {
   #scope: Element | undefined = undefined;
 
-  constructor(readonly key: string, callbackFn: () => void) {
+  #options;
+
+  constructor(readonly key: string, callbackFn: () => void, options?: Options) {
+    this.#options = options;
+
     window.addEventListener('keydown', event => {
       let allConditionsAreMet = (
         event.key.toUpperCase() === key.toUpperCase()
+        && (this.#options?.shiftKey === undefined || this.#options.shiftKey == event.shiftKey)
+        && (this.#options?.ctrlKey === undefined || this.#options.ctrlKey == event.ctrlKey)
+        && (this.#options?.metaKey === undefined || this.#options.metaKey == event.metaKey)
         && !userIsTyping()
         && isBeingInteractedWith(this.scope)
       );
@@ -34,3 +41,9 @@ export class KeyBinding {
     this.#scope = scope;
   }
 }
+
+type Options = {
+  shiftKey?: boolean;
+  ctrlKey?: boolean;
+  metaKey?: boolean;
+};
