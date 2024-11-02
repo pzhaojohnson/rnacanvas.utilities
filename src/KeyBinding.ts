@@ -20,6 +20,7 @@ export class KeyBinding {
     window.addEventListener('keydown', event => {
       let allConditionsAreMet = (
         event.key.toUpperCase() === key.toUpperCase()
+        && (this.#options?.altKey === undefined || this.#options.altKey == event.altKey)
         && (this.#options?.shiftKey === undefined || this.#options.shiftKey == event.shiftKey)
         && (this.#options?.ctrlKey === undefined || this.#options.ctrlKey == event.ctrlKey)
         && (this.#options?.metaKey === undefined || this.#options.metaKey == event.metaKey)
@@ -37,6 +38,7 @@ export class KeyBinding {
 }
 
 type Options = {
+  altKey?: boolean;
   shiftKey?: boolean;
   ctrlKey?: boolean;
   metaKey?: boolean;
