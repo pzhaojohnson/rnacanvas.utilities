@@ -2,16 +2,16 @@
  * @jest-environment jsdom
  */
 
-import { detectMac } from './detectMac';
+import { detectMacOS } from './detectMacOS';
 
-describe('detectMac function', () => {
+describe('detectMacOS function', () => {
   test('when the user is using an Intel Mac device', () => {
     Object.defineProperty(window, 'navigator', {
       value: { platform: 'MacIntel' },
       writable: true,
     });
 
-    expect(detectMac()).toBe(true);
+    expect(detectMacOS()).toBe(true);
   });
 
   test('when the user is using an ARM Mac device', () => {
@@ -20,7 +20,7 @@ describe('detectMac function', () => {
       writable: true,
     });
 
-    expect(detectMac()).toBe(true);
+    expect(detectMacOS()).toBe(true);
   });
 
   test('when the user is using a Windows device', () => {
@@ -29,7 +29,7 @@ describe('detectMac function', () => {
       writable: true,
     });
 
-    expect(detectMac()).toBe(false);
+    expect(detectMacOS()).toBe(false);
   });
 
   test('when the user is using a Linux device', () => {
@@ -38,7 +38,7 @@ describe('detectMac function', () => {
       writable: true,
     });
 
-    expect(detectMac()).toBe(false);
+    expect(detectMacOS()).toBe(false);
   });
 
   test('when navigator platform is undefined', () => {
@@ -47,7 +47,7 @@ describe('detectMac function', () => {
       writable: true,
     });
 
-    expect(detectMac()).toBe(false);
+    expect(detectMacOS()).toBe(false);
   });
 
   test('when navigator is undefined', () => {
@@ -56,6 +56,6 @@ describe('detectMac function', () => {
       writable: true,
     });
 
-    expect(detectMac()).toBe(false);
+    expect(detectMacOS()).toBe(false);
   });
 });

@@ -3,7 +3,7 @@
  *
  * Returns false otherwise.
  */
-export function detectMac(): boolean {
+export function detectMacOS(): boolean {
   // enclose in a try block in case this method of detection gets deprecated in the future
   try {
     return window.navigator.platform.toLowerCase().includes('mac');

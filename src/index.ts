@@ -10,8 +10,8 @@ export { isBeingInteractedWith };
 import { KeyBinding } from './KeyBinding';
 export { KeyBinding };
 
-import { detectMac } from './detectMac';
-export { detectMac };
+import { detectMacOS } from './detectMacOS';
+export { detectMacOS };
 
 import { DownloadableFile } from './DownloadableFile';
 export { DownloadableFile };
