@@ -21,3 +21,6 @@ export { EventfulSet };
 
 import { FiniteStack } from './FiniteStack';
 export { FiniteStack };
+
+import { isURL } from './isURL';
+export { isURL };
