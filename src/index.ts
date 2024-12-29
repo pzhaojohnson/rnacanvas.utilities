@@ -10,6 +10,9 @@ export { isBeingInteractedWith };
 import { hasFocus } from './hasFocus';
 export { hasFocus };
 
+import { containsFocus } from './containsFocus';
+export { containsFocus };
+
 import { KeyBinding } from './KeyBinding';
 export { KeyBinding };
 
