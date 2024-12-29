@@ -7,6 +7,9 @@ export { userIsTyping };
 import { isBeingInteractedWith } from './isBeingInteractedWith';
 export { isBeingInteractedWith };
 
+import { hasFocus } from './hasFocus';
+export { hasFocus };
+
 import { KeyBinding } from './KeyBinding';
 export { KeyBinding };
 
