@@ -1,19 +1,13 @@
 import { shuffled } from './shuffled';
 export { shuffled };
 
-import { userIsTyping } from './userIsTyping';
-export { userIsTyping };
-
-import { isBeingInteractedWith } from './isBeingInteractedWith';
-export { isBeingInteractedWith };
-
 import { hasFocus } from './hasFocus';
 export { hasFocus };
 
 import { containsFocus } from './containsFocus';
 export { containsFocus };
 
-import { KeyBinding } from './KeyBinding';
+import { KeyBinding } from '@rnacanvas/key-bindings';
 export { KeyBinding };
 
 import { detectMacOS } from './detectMacOS';
