@@ -42,8 +42,8 @@ var ele2 = document.createElement('div');
 ele1.append(ele2);
 
 // make elements focusable
-ele1.tabIndex = '0';
-ele2.tabIndex = '0';
+ele1.tabIndex = 0;
+ele2.tabIndex = 0;
 
 ele1.focus();
 containsFocus(ele1); // true
