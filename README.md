@@ -53,3 +53,9 @@ ele2.focus();
 containsFocus(ele1); // true
 containsFocus(ele2); // true
 ```
+
+## `class KeyBinding`
+
+The `KeyBinding` class represents a key binding.
+
+See the [@rnacanvas/key-bindings](https://pzhaojohnson.github.io/rnacanvas.key-bindings/) package for documentation.
