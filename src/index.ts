@@ -1,3 +1,6 @@
+import { splitLines } from './splitLines';
+export { splitLines };
+
 import { shuffled } from './shuffled';
 export { shuffled };
 
