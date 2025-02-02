@@ -17,6 +17,29 @@ import { DownloadableFile } from '@rnacanvas/utilities';
 import { KeyBinding } from '@rnacanvas/utilities';
 ```
 
+## `function splitLines()`
+
+Splits a string into its constituent lines
+regardless of newline character encoding
+(e.g., CR, LF, CRLF).
+
+```javascript
+splitLines('asdf\nqwer'); // ["asdf", "qwer"]
+
+splitLines('1\n2\r3\r\n4'); // ["1", "2", "3", "4"]
+```
+
+Note that empty strings might be present in the returned array
+after splitting.
+
+```javascript
+splitLines('\nasdf'); // ["", "asdf"]
+
+splitLines('qwer\r'); // ["qwer", ""]
+
+splitLines('asdf\n\n\nqwer'); // ["asdf", "", "", "qwer"]
+```
+
 ## `function hasFocus()`
 
 The `hasFocus()` function returns `true` if and only if
