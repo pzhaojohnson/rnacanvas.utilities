@@ -1,6 +1,9 @@
 import { splitLines } from './splitLines';
 export { splitLines };
 
+import { isJSONSerializable } from './isJSONSerializable';
+export { isJSONSerializable };
+
 import { shuffled } from './shuffled';
 export { shuffled };
 
