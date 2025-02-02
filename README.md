@@ -49,14 +49,16 @@ without the `JSON.stringify()` method throwing.
 Returns `false` otherwise.
 
 ```javascript
-isJSONSerializable({ 'a': 1, 'b': 2 }); // true
+var obj1 = { 'a': 1, 'b': 2 };
 
-var obj = {};
+isJSONSerializable(obj1); // true
+
+var obj2 = {};
 
 // a circular reference
-obj.obj = obj;
+obj2.obj2 = obj2;
 
-isJSONSerializable(obj); // false
+isJSONSerializable(obj2); // false
 ```
 
 ## `function hasFocus()`
