@@ -61,6 +61,17 @@ obj2.obj2 = obj2;
 isJSONSerializable(obj2); // false
 ```
 
+## `function shuffled()`
+
+Returns a new array containing the same values as in the input array
+but shuffled in random order.
+
+(Does not modify the input array of values.)
+
+```javascript
+shuffled([1, 2, 3, 4, 5]); // [3, 1, 5, 2, 4]
+```
+
 ## `function hasFocus()`
 
 The `hasFocus()` function returns `true` if and only if
