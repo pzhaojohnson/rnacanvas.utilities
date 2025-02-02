@@ -40,6 +40,25 @@ splitLines('qwer\r'); // ["qwer", ""]
 splitLines('asdf\n\n\nqwer'); // ["asdf", "", "", "qwer"]
 ```
 
+## `function isJSONSerializable()`
+
+Return `true` if the provided value can be serialized
+using the `JSON.stringify()` method
+without the `JSON.stringify()` method throwing.
+
+Returns `false` otherwise.
+
+```javascript
+isJSONSerializable({ 'a': 1, 'b': 2 }); // true
+
+var obj = {};
+
+// a circular reference
+obj.obj = obj;
+
+isJSONSerializable(obj); // false
+```
+
 ## `function hasFocus()`
 
 The `hasFocus()` function returns `true` if and only if
