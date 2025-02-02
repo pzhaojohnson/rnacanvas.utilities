@@ -114,3 +114,9 @@ containsFocus(ele2); // true
 The `KeyBinding` class represents a key binding.
 
 See the [@rnacanvas/key-bindings](https://pzhaojohnson.github.io/rnacanvas.key-bindings/) package for documentation.
+
+## `function detectMacOS()`
+
+Returns `true` if it is detected that the user is using macOS.
+
+Returns `false` otherwise.
