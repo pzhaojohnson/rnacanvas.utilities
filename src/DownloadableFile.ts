@@ -1,17 +1,40 @@
 /**
- * Represents a file that can be downloaded.
+ * A file that can be downloaded.
  */
 export class DownloadableFile {
-  /**
-   * Creates a downloadable file with the given text content.
-   */
-  constructor(private textContent: string) {}
+  name: string;
 
-  /**
-   * Offers the file to the user for download with the given name and type.
-   */
-  downloadAs(name: string, options: { type: string }): void {
-    let file = new File([this.textContent], name, { type: options.type });
+  content: string | Blob;
+
+  #type?: string;
+
+  constructor(name?: string, content?: string | Blob, options?: { type?: string }) {
+    this.name = name ?? 'Unnamed.txt';
+
+    this.content = content ?? '';
+
+    this.#type = options?.type;
+  }
+
+  get type(): string {
+    if (this.#type != undefined) {
+      return this.#type;
+    }
+
+    if (this.content instanceof Blob) {
+      return this.content.type;
+    }
+
+    return 'text/plain';
+  }
+
+  set type(type) {
+    this.#type = type;
+  }
+
+  download(): void {
+    let file = new File([this.content], this.name, { type: this.type });
+
     let url = URL.createObjectURL(file);
 
     let link = document.createElement('a');
@@ -20,8 +43,8 @@ export class DownloadableFile {
 
     document.body.appendChild(link);
     link.click();
-
     link.remove();
+
     URL.revokeObjectURL(url);
   }
 }
