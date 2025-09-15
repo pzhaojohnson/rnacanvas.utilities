@@ -144,6 +144,7 @@ All constructor parameters are optional.
 ```javascript
 var file = new DownloadableFile();
 
+// default values
 file.name; // "Unnamed.txt"
 file.content; // ""
 file.type; // "text/plain"
