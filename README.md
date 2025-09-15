@@ -109,6 +109,46 @@ containsFocus(ele1); // true
 containsFocus(ele2); // true
 ```
 
+## `class DownloadableFile`
+
+Represents a file that can be downloaded by the user.
+
+```javascript
+var file = new DownloadableFile('A file.txt', 'Some text.', { type: 'text/plain' });
+
+file.name; // "A file.txt"
+file.content; // "Some text."
+file.type; // "text/plain"
+
+// download the file for the user
+file.download();
+```
+
+A blob can be used in place of a string
+for the content of a downloadable file.
+
+```javascript
+var blob = new Blob(['<p>Hello</p>'], { type: 'text/html' });
+
+var file1 = new DownloadableFile('hello.html', blob);
+
+// specifying file type overrides blob type
+var file2 = new DownloadableFile('hello.txt', blob, { type: 'text/plain' });
+
+file2.type; // "text/plain"
+file1.type; // "text/html"
+```
+
+All constructor parameters are optional.
+
+```javascript
+var file = new DownloadableFile();
+
+file.name; // "Unnamed.txt"
+file.content; // ""
+file.type; // "text/plain"
+```
+
 ## `class KeyBinding`
 
 The `KeyBinding` class represents a key binding.
