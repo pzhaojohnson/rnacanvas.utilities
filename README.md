@@ -156,8 +156,20 @@ The `KeyBinding` class represents a key binding.
 
 See the [@rnacanvas/key-bindings](https://pzhaojohnson.github.io/rnacanvas.key-bindings/) package for documentation.
 
+## `function detectWindows()`
+
+Returns `true` if it is detected that the user is using Windows
+and returns `false` otherwise.
+
+```javascript
+detectWindows();
+```
+
 ## `function detectMacOS()`
 
-Returns `true` if it is detected that the user is using macOS.
+Returns `true` if it is detected that the user is using macOS
+and returns `false` otherwise.
 
-Returns `false` otherwise.
+```javascript
+detectMacOS();
+```
