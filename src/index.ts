@@ -16,6 +16,9 @@ export { containsFocus };
 import { KeyBinding } from '@rnacanvas/key-bindings';
 export { KeyBinding };
 
+import { detectWindows } from './detectWindows';
+export { detectWindows };
+
 import { detectMacOS } from './detectMacOS';
 export { detectMacOS };
 
