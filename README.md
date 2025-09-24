@@ -26,7 +26,23 @@ Throws for empty arrays.
 ```javascript
 first([5, 4, 3, 2, 1]); // 5
 
+first(['b']); // "b"
+
 first([]); // throws
+```
+
+## `function last()`
+
+Returns the last item in an array.
+
+Throws for empty arrays.
+
+```javascript
+last([5, 4, 3, 2, 1]); // 1
+
+last(['Q']); // "Q"
+
+last([]); // throws
 ```
 
 ## `function splitLines()`
