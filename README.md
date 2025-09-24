@@ -17,6 +17,18 @@ import { DownloadableFile } from '@rnacanvas/utilities';
 import { KeyBinding } from '@rnacanvas/utilities';
 ```
 
+## `function first()`
+
+Returns the first item in an array.
+
+Throws for empty arrays.
+
+```javascript
+first([5, 4, 3, 2, 1]); // 5
+
+first([]); // throws
+```
+
 ## `function splitLines()`
 
 Splits a string into its constituent lines
