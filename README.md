@@ -40,7 +40,7 @@ Throws for empty arrays.
 ```javascript
 last([5, 4, 3, 2, 1]); // 1
 
-last(['Q']); // "Q"
+last(['b']); // "b"
 
 last([]); // throws
 ```
