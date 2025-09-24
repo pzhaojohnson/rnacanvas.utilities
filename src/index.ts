@@ -1,3 +1,6 @@
+import { first } from './first';
+export { first };
+
 import { splitLines } from './splitLines';
 export { splitLines };
 
