@@ -1,6 +1,9 @@
 import { first } from './first';
 export { first };
 
+import { last } from './last';
+export { last };
+
 import { splitLines } from './splitLines';
 export { splitLines };
 
