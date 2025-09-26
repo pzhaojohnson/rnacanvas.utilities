@@ -4,6 +4,9 @@ export { first };
 import { last } from './last';
 export { last };
 
+import { middleThree } from './middleThree';
+export { middleThree };
+
 import { splitLines } from './splitLines';
 export { splitLines };
 
