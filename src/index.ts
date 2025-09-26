@@ -7,6 +7,9 @@ export { last };
 import { middleThree } from './middleThree';
 export { middleThree };
 
+import { middleFour } from './middleFour';
+export { middleFour };
+
 import { splitLines } from './splitLines';
 export { splitLines };
 
