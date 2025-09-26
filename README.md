@@ -50,7 +50,7 @@ last([]); // throws
 Returns the middle three items in an array.
 
 Throws for arrays with less than three items
-and arrays with an even number of items.
+and arrays with even numbers of items.
 
 ```javascript
 middleThree([1, 2, 3, 4, 5]); // [2, 3, 4]
@@ -58,9 +58,28 @@ middleThree([1, 2, 3, 4, 5]); // [2, 3, 4]
 middleThree([1, 2, 3, 4, 5, 6]); // throws
 
 middleThree([]); // throws
-middleThree([1]); // throws
-middleThree([1, 2]); // throws
-middleThree([1, 2, 3]); // [1, 2, 3]
+middleThree(['a']); // throws
+middleThree(['a', 'b']); // throws
+middleThree(['a', 'b', 'c']); // ["a", "b", "c"]
+```
+
+## `function middleFour()`
+
+Returns the middle four items in an array.
+
+Throws for arrays with less than four items
+and arrays with odd numbers of items.
+
+```javascript
+middleFour([1, 2, 3, 4, 5, 6]); // [2, 3, 4, 5]
+
+middleFour([1, 2, 3, 4, 5, 6, 7]); // throws
+
+middleFour([]); // throws
+middleFour(['a']); // throws
+middleFour(['a', 'b']); // throws
+middleFour(['a', 'b', 'c']); // throws
+middleFour(['a', 'b', 'c', 'd']); // ["a", "b", "c", "d"]
 ```
 
 ## `function splitLines()`
