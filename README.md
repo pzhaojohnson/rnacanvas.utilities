@@ -45,6 +45,24 @@ last(['b']); // "b"
 last([]); // throws
 ```
 
+## `function middleThree()`
+
+Returns the middle three items in an array.
+
+Throws for arrays with less than three items
+and arrays with an even number of items.
+
+```javascript
+middleThree([1, 2, 3, 4, 5]); // [2, 3, 4]
+
+middleThree([1, 2, 3, 4, 5, 6]); // throws
+
+middleThree([]); // throws
+middleThree([1]); // throws
+middleThree([1, 2]); // throws
+middleThree([1, 2, 3]); // [1, 2, 3]
+```
+
 ## `function splitLines()`
 
 Splits a string into its constituent lines
