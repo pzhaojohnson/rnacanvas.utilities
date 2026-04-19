@@ -13,6 +13,9 @@ export { middleFour };
 import { splitLines } from './splitLines';
 export { splitLines };
 
+import { isJSON } from '@rnacanvas/value-check';
+export { isJSON };
+
 import { isJSONSerializable } from '@rnacanvas/value-check';
 export { isJSONSerializable };
 
