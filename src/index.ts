@@ -13,7 +13,7 @@ export { middleFour };
 import { splitLines } from './splitLines';
 export { splitLines };
 
-import { isJSONSerializable } from './isJSONSerializable';
+import { isJSONSerializable } from '@rnacanvas/value-check';
 export { isJSONSerializable };
 
 import { shuffled } from './shuffled';
