@@ -105,6 +105,35 @@ splitLines('qwer\r'); // ["qwer", ""]
 splitLines('asdf\n\n\nqwer'); // ["asdf", "", "", "qwer"]
 ```
 
+## `function isJSON()`
+
+Returns `true` if a value is a string in JSON format.
+
+Returns `false` otherwise.
+
+```javascript
+isJSON('{ "a": 1, "b": 2 }'); // true
+
+isJSON('[1, 2, 3]'); // true
+
+isJSON('"asdf"'); // true
+
+isJSON('2'); // true
+
+// no double-quotes
+isJSON('asdf'); // false
+
+// missing closing bracket
+isJSON('{ "a": 1, "b": 2'); // false
+
+// not a string
+isJSON({ "a": 1, "b": 2 }); // false
+
+// some more non-string values
+isJSON([1, 2, 3]); // false
+isJSON(2); // false
+```
+
 ## `function isJSONSerializable()`
 
 Returns `true` if a value can be serialized to a JSON string.
