@@ -107,23 +107,24 @@ splitLines('asdf\n\n\nqwer'); // ["asdf", "", "", "qwer"]
 
 ## `function isJSONSerializable()`
 
-Return `true` if the provided value can be serialized
-using the `JSON.stringify()` method
-without the `JSON.stringify()` method throwing.
+Returns `true` if a value can be serialized to a JSON string.
 
 Returns `false` otherwise.
 
 ```javascript
-var obj1 = { 'a': 1, 'b': 2 };
+isJSONSerializable({ "a": 1, "b": 2 }); // true
 
-isJSONSerializable(obj1); // true
-
-var obj2 = {};
+var o = {};
 
 // a circular reference
-obj2.obj2 = obj2;
+o.o = o;
 
-isJSONSerializable(obj2); // false
+isJSONSerializable(o); // false
+
+// some simple cases
+isJSONSerializable([1, 2, 3]); // true
+isJSONSerializable('asdf'); // true
+isJSONSerializable(2); // true
 ```
 
 ## `function shuffled()`
