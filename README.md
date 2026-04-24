@@ -82,6 +82,23 @@ middleFour(['a', 'b', 'c']); // throws
 middleFour(['a', 'b', 'c', 'd']); // ["a", "b", "c", "d"]
 ```
 
+## `function removeWhitespace()`
+
+Returns a new string with all whitespace having been omitted from the input string.
+
+```javascript
+removeWhitespace(' a s d f '); // "asdf"
+
+// different kinds of whitespace characters
+removeWhitespace(' a\ts\nd\rf\r\n'); // "asdf"
+
+// no whitespace characters
+removeWhitespace('asdf'); // "asdf"
+
+// an empty string
+removeWhitespace(''); // ""
+```
+
 ## `function splitLines()`
 
 Splits a string into its constituent lines
