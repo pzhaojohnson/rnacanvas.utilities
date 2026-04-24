@@ -84,7 +84,7 @@ middleFour(['a', 'b', 'c', 'd']); // ["a", "b", "c", "d"]
 
 ## `function removeWhitespace()`
 
-Returns a new string with all whitespace having been omitted from the input string.
+Returns a new string with all whitespace characters having been omitted from the input string.
 
 ```javascript
 removeWhitespace(' a s d f '); // "asdf"
