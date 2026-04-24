@@ -10,6 +10,9 @@ export { middleThree };
 import { middleFour } from './middleFour';
 export { middleFour };
 
+import { removeWhitespace } from './removeWhitespace';
+export { removeWhitespace };
+
 import { splitLines } from './splitLines';
 export { splitLines };
 
