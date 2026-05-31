@@ -37,8 +37,8 @@ export { KeyBinding };
 import { detectWindows } from './detectWindows';
 export { detectWindows };
 
-import { detectMacOS } from './detectMacOS';
-export { detectMacOS };
+import { detectMac } from './detectMac';
+export { detectMac };
 
 import { DownloadableFile } from './DownloadableFile';
 export { DownloadableFile };
