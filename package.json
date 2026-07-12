@@ -1,6 +1,6 @@
 {
   "name": "@rnacanvas/utilities",
-  "version": "8.1.0",
+  "version": "9.0.0",
   "description": "General utilities",
   "main": "./dist/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "webpack-cli": "^7.0.2"
   },
   "dependencies": {
-    "@rnacanvas/key-bindings": "^1.1.0",
+    "@rnacanvas/key-bindings": "^2.0.0",
     "@rnacanvas/value-check": "^2.2.0"
   }
 }
