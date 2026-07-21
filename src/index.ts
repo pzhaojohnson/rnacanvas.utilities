@@ -10,6 +10,9 @@ export { middleThree };
 import { middleFour } from './middleFour';
 export { middleFour };
 
+import { consecutivePairs } from './consecutivePairs';
+export { consecutivePairs };
+
 import { removeWhitespace } from './removeWhitespace';
 export { removeWhitespace };
 
