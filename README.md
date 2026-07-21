@@ -82,6 +82,25 @@ middleFour(['a', 'b', 'c']); // throws
 middleFour(['a', 'b', 'c', 'd']); // ["a", "b", "c", "d"]
 ```
 
+## `function consecutivePairs()`
+
+Returns an array of tuples containing all consecutive pairs
+(i.e., neighboring pairs) in the input array.
+
+```javascript
+var items = [1, 2, 3, 4];
+
+var pairs = consecutivePairs(items);
+
+pairs; // [[1, 2], [2, 3], [3, 4]]
+
+// for an empty array
+consecutivePairs([]); // []
+
+// for an array with less than 2 items
+consecutivePairs([1]); // []
+```
+
 ## `function removeWhitespace()`
 
 Returns a new string with all whitespace characters having been omitted from the input string.
