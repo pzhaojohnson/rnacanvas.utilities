@@ -57,6 +57,13 @@ export class EventfulSet<T> {
   }
 
   /**
+   * Only calls event listeners once after adding all specified items.
+   */
+  add(...items: T[]): void {
+    this.addAll(items);
+  }
+
+  /**
    * Adds all of the specified items to the set.
    *
    * If some items were already present in the set, they are not duplicated.
@@ -77,6 +84,13 @@ export class EventfulSet<T> {
 
     itemsArray.forEach(item => this.underlyingSet.add(item));
     this.callEventListeners('change');
+  }
+
+  /**
+   * Only calls event listeners once after removing all specified items.
+   */
+  remove(...items: T[]): void {
+    this.removeAll(items);
   }
 
   /**

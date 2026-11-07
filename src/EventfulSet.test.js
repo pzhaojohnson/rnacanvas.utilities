@@ -76,6 +76,26 @@ describe('EventfulSet class', () => {
     expect(set.include('qwEr')).toBe(false);
   });
 
+  test('`add()`', () => {
+    let set = new EventfulSet();
+
+    let listener = jest.fn();
+    set.addEventListener('change', listener);
+
+    set.add('a', 5, 'zxcv', 88.1);
+
+    expect([...set]).toStrictEqual(['a', 5, 'zxcv', 88.1]);
+
+    // event listeners are only called once for all added items
+    expect(listener).toHaveBeenCalledTimes(1);
+
+    // adding items already in the set does not duplicate them or call listeners
+    set.add('a', 5);
+
+    expect([...set]).toStrictEqual(['a', 5, 'zxcv', 88.1]);
+    expect(listener).toHaveBeenCalledTimes(1);
+  });
+
   describe('addAll method', () => {
     it('adds all of the specified items', () => {
       let set = new EventfulSet();
@@ -120,6 +140,27 @@ describe('EventfulSet class', () => {
 
       expect(listener).not.toHaveBeenCalled();
     });
+  });
+
+  test('`remove()`', () => {
+    let set = new EventfulSet();
+    set.add('a', 5, 'zxcv', 88.1, 'b');
+
+    let listener = jest.fn();
+    set.addEventListener('change', listener);
+
+    set.remove(5, 'a', 88.1);
+
+    expect([...set]).toStrictEqual(['zxcv', 'b']);
+
+    // event listeners are only called once for all removed items
+    expect(listener).toHaveBeenCalledTimes(1);
+
+    // removing items not in the set does not change it or call listeners
+    set.remove(5, 'nope');
+
+    expect([...set]).toStrictEqual(['zxcv', 'b']);
+    expect(listener).toHaveBeenCalledTimes(1);
   });
 
   describe('removeAll method', () => {
