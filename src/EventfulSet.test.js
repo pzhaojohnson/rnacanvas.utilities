@@ -32,6 +32,21 @@ describe('EventfulSet class', () => {
     expect(set.size).toBe(0);
   });
 
+  test('`has()`', () => {
+    let set = new EventfulSet();
+
+    set.addAll(['b', 'e', 55, 88.921, '54']);
+
+    expect(set.has('b')).toBe(true);
+    expect(set.has('e')).toBe(true);
+    expect(set.has(55)).toBe(true);
+    expect(set.has(88.921)).toBe(true);
+    expect(set.has('54')).toBe(true);
+
+    expect(set.has('a')).toBe(false);
+    expect(set.has(54)).toBe(false);
+  });
+
   test('includes method', () => {
     let set = new EventfulSet();
 

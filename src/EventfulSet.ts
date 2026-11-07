@@ -36,6 +36,10 @@ export class EventfulSet<T> {
     return this.underlyingSet.size;
   }
 
+  has(item: T): boolean {
+    return this.includes(item);
+  }
+
   /**
    * Returns true if the set possesses the given item and returns false otherwise.
    */
