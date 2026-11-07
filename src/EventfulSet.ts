@@ -32,6 +32,10 @@ export class EventfulSet<T> {
     return this.underlyingSet.values();
   }
 
+  get size(): number {
+    return this.underlyingSet.size;
+  }
+
   /**
    * Returns true if the set possesses the given item and returns false otherwise.
    */

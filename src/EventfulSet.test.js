@@ -9,6 +9,29 @@ describe('EventfulSet class', () => {
     expect([...set]).toStrictEqual([5, 24, '82', 'zxcv', '88.29']);
   });
 
+  test('`size`', () => {
+    let set = new EventfulSet();
+
+    expect(set.size).toBe(0);
+
+    set.addAll(['a', 'b', 5, 88.1, 'zxcv']);
+
+    expect(set.size).toBe(5);
+
+    // duplicate items are not counted twice
+    set.addAll(['a', 5, 'new']);
+
+    expect(set.size).toBe(6);
+
+    set.removeAll(['b', 88.1]);
+
+    expect(set.size).toBe(4);
+
+    set.clear();
+
+    expect(set.size).toBe(0);
+  });
+
   test('includes method', () => {
     let set = new EventfulSet();
 
