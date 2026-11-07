@@ -1,6 +1,6 @@
 {
   "name": "@rnacanvas/utilities",
-  "version": "9.1.0",
+  "version": "10.0.0",
   "description": "General utilities",
   "main": "./dist/index.js",
   "scripts": {
@@ -10,9 +10,9 @@
   "author": "pzhaojohnson",
   "license": "GPL-3.0-only",
   "devDependencies": {
-    "@babel/core": "^7.23.7",
-    "@babel/preset-env": "^7.23.7",
-    "@babel/preset-typescript": "^7.23.3",
+    "@babel/core": "^8.1.0",
+    "@babel/preset-env": "^8.0.7",
+    "@babel/preset-typescript": "^8.0.7",
     "babel-jest": "^30.1.2",
     "jest": "^30.1.3",
     "jest-environment-jsdom": "^30.1.2",
@@ -22,7 +22,7 @@
     "webpack-cli": "^7.0.2"
   },
   "dependencies": {
-    "@rnacanvas/key-bindings": "^2.0.0",
+    "@rnacanvas/key-bindings": "^3.0.0",
     "@rnacanvas/value-check": "^2.2.0"
   }
 }
